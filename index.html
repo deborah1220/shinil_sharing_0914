@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 학교 최성보 이야기</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F4FAF7;
+    --ink:#182420;
+    --muted:#5F6E67;
+    --faint:#9CA9A2;
+    --deep:#0B4A3A;
+    --emerald:#149468;
+    --emerald-dk:#0E6B4C;
+    --mint:#E4F5EC;
+    --gold:#EBB44E;
+    --gold-dk:#9A7314;
+    --gold-soft:#FBF1DA;
+    --coral:#E8836F;
+    --coral-soft:#FCEEE9;
+    --forest:#4AA372;
+    --forest-soft:#E9F5EE;
+    --line:#E7EEEA;
+    --r:22px;
+    --shadow:0 10px 34px rgba(11,74,58,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Pretendard Variable",Pretendard,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.75;word-break:keep-all;
+  }
+  section{scroll-margin-top:86px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px;}
+
+  /* ===== nav ===== */
+  nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{max-width:1080px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:11px;}
+  .logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--emerald),var(--emerald-dk));display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;flex:none;}
+  .nav-name{font-weight:800;font-size:15.5px;color:var(--deep);letter-spacing:-0.01em;}
+  .nav-links{margin-left:auto;display:flex;gap:2px;align-items:center;}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:600;padding:8px 13px;border-radius:999px;transition:background .15s,color .15s;}
+  .nav-links a:hover{background:var(--mint);color:var(--deep);}
+  .nav-links a.cta{background:var(--deep);color:#fff;margin-left:6px;padding:8px 18px;}
+  .nav-links a.cta:hover{background:var(--emerald-dk);}
+  .nav-links a:focus-visible{outline:2px solid var(--emerald);outline-offset:2px;}
+
+  /* ===== hero (bento) ===== */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(720px 420px at 88% -10%, var(--mint) 0%, transparent 62%),
+    radial-gradient(560px 380px at -8% 108%, var(--gold-soft) 0%, transparent 60%),
+    var(--bg);
+    padding:92px 0 96px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--emerald-dk);box-shadow:0 4px 14px rgba(11,74,58,.06);margin-bottom:22px;}
+  .badge i{width:8px;height:8px;border-radius:50%;background:var(--emerald);font-style:normal;}
+  h1{font-size:clamp(34px,4.8vw,52px);line-height:1.28;font-weight:800;letter-spacing:-0.025em;color:var(--deep);margin-bottom:18px;}
+  .hero-sub{font-size:17px;color:var(--muted);margin-bottom:30px;max-width:460px;}
+  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:38px;}
+  .tag{font-size:13.5px;font-weight:700;border-radius:999px;padding:8px 16px;}
+  .tag.g{background:var(--mint);color:var(--emerald-dk);}
+  .tag.y{background:var(--gold-soft);color:var(--gold-dk);}
+  .tag.f{background:var(--forest-soft);color:#2E7A50;}
+  .tag.c{background:var(--coral-soft);color:#C1523C;}
+  .stats{display:flex;gap:38px;flex-wrap:wrap;}
+  .stat b{display:block;font-size:26px;font-weight:800;color:var(--deep);letter-spacing:-0.02em;line-height:1.2;}
+  .stat span{font-size:13px;color:var(--muted);}
+
+  /* bento photos */
+  .bento{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:130px;grid-auto-flow:dense;gap:14px;}
+  .tile{border-radius:20px;overflow:hidden;position:relative;}
+  .tile.tall{grid-row:span 2;}
+  .tile.ph{
+    background:linear-gradient(150deg,#EDF4F0,#E2EEE8);
+    display:grid;place-items:center;align-content:center;gap:5px;padding:16px;text-align:center;
+  }
+  .tile.ph .cam{width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:17px;color:var(--emerald);box-shadow:0 4px 10px rgba(11,74,58,.10);}
+  .tile.ph small{font-size:12px;color:#7E8C85;line-height:1.45;}
+  .tile.solid{display:grid;place-items:center;align-content:center;gap:3px;color:#fff;text-align:center;}
+  .tile.solid b{font-size:24px;font-weight:800;letter-spacing:-0.02em;}
+  .tile.solid span{font-size:12.5px;opacity:.92;}
+  @media (prefers-reduced-motion:no-preference){
+    .hero .fade{opacity:0;transform:translateY(16px);animation:up .7s ease forwards;}
+    .hero .fade:nth-child(2){animation-delay:.07s}.hero .fade:nth-child(3){animation-delay:.14s}
+    .hero .fade:nth-child(4){animation-delay:.21s}.hero .fade:nth-child(5){animation-delay:.28s}
+    .bento{opacity:0;transform:translateY(20px);animation:up .8s .2s ease forwards;}
+    @keyframes up{to{opacity:1;transform:none}}
+  }
+
+  /* ===== 공통 섹션 ===== */
+  .sect{padding:96px 0;}
+  .sect.soft{background:var(--bg-soft);}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:800;color:var(--emerald-dk);background:var(--mint);border-radius:999px;padding:6px 15px;margin-bottom:16px;}
+  .eyebrow.y{color:var(--gold-dk);background:var(--gold-soft);}
+  .eyebrow.c{color:#C1523C;background:var(--coral-soft);}
+  h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;letter-spacing:-0.02em;color:var(--deep);line-height:1.35;margin-bottom:14px;}
+  .lead{font-size:16.5px;color:var(--muted);max-width:620px;}
+
+  /* ===== 방향 ===== */
+  .quote{
+    margin-top:24px;border-radius:var(--r);padding:40px 44px;color:#fff;
+    background:linear-gradient(120deg,var(--deep),var(--emerald-dk));
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .quote strong{font-size:clamp(19px,2.4vw,24px);font-weight:800;letter-spacing:-0.01em;}
+  .quote span{color:#B9E2D2;font-size:14.5px;max-width:420px;}
+
+  /* ===== 활동 (교차 배치) ===== */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .feat + .feat{margin-top:92px;}
+  .feat:nth-child(even) .feat-media{order:-1;}
+  .feat h3{font-size:24px;font-weight:800;color:var(--deep);letter-spacing:-0.015em;margin-bottom:10px;}
+  .feat .desc{font-size:15.5px;color:var(--muted);margin-bottom:22px;}
+  .mini{border-left:3px solid var(--mint);padding:2px 0 2px 16px;margin-bottom:16px;}
+  .mini b{display:block;font-size:16px;color:var(--deep);}
+  .mini span{font-size:14px;color:var(--muted);}
+  .say{
+    display:inline-block;background:var(--mint);color:var(--emerald-dk);
+    font-size:14px;font-weight:700;border-radius:14px 14px 14px 4px;padding:10px 16px;margin-top:4px;
+  }
+  .say.y{background:var(--gold-soft);color:var(--gold-dk);}
+
+  .media-card{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);}
+  .media-card .ph{
+    background:linear-gradient(150deg,#EDF4F0,#E2EEE8);
+    min-height:250px;display:grid;place-items:center;align-content:center;gap:7px;padding:24px;text-align:center;
+  }
+  .media-card .ph .cam{width:44px;height:44px;border-radius:14px;background:#fff;display:grid;place-items:center;font-size:19px;color:var(--emerald);box-shadow:0 4px 12px rgba(11,74,58,.10);}
+  .media-card .ph small{font-size:13px;color:#7E8C85;}
+  .media-card .capt{background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 var(--r) var(--r);padding:13px 20px;font-size:13.5px;font-weight:600;color:var(--muted);}
+  .media-stack{display:grid;gap:20px;}
+
+  /* 유형칩 + 학급 리스트 */
+  .type-chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px;}
+  .cls-list{display:grid;gap:10px;}
+  .cls{
+    display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:11px 16px;font-size:14px;box-shadow:0 3px 12px rgba(11,74,58,.05);
+  }
+  .cls i{font-style:normal;min-width:42px;height:30px;border-radius:9px;background:var(--deep);color:#fff;display:grid;place-items:center;font-size:12.5px;font-weight:700;}
+  .cls em{font-style:normal;font-size:11px;font-weight:700;border-radius:999px;padding:3px 10px;flex:none;}
+  .cls em.a{background:var(--gold-soft);color:var(--gold-dk);}
+  .cls em.c{background:var(--coral-soft);color:#C1523C;}
+  .cls em.b{background:var(--forest-soft);color:#2E7A50;}
+
+  /* 학기 카드 */
+  .sems{display:grid;gap:16px;}
+  .sem{border-radius:18px;padding:22px 24px;border:1px solid var(--line);background:#fff;box-shadow:0 3px 12px rgba(11,74,58,.05);}
+  .sem .pill{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:4px 12px;margin-bottom:8px;}
+  .sem.g .pill{background:var(--mint);color:var(--emerald-dk);}
+  .sem.y .pill{background:var(--gold-soft);color:var(--gold-dk);}
+  .sem b{display:block;font-size:19px;font-weight:800;color:var(--deep);margin-bottom:4px;}
+  .sem p{font-size:14px;color:var(--muted);}
+
+  /* ===== 일상 챙김 카드 ===== */
+  .daily{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;}
+  .dcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  .dcard .ph{background:linear-gradient(150deg,#EDF4F0,#E2EEE8);min-height:170px;display:grid;place-items:center;align-content:center;gap:6px;padding:20px;text-align:center;}
+  .dcard .ph .cam{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:17px;color:var(--emerald);box-shadow:0 4px 10px rgba(11,74,58,.10);}
+  .dcard .ph small{font-size:12.5px;color:#7E8C85;}
+  .dbody{padding:22px 24px 26px;}
+  .dbody .who{font-size:12.5px;font-weight:700;margin-bottom:8px;}
+  .dbody h4{font-size:17.5px;font-weight:800;color:var(--deep);margin-bottom:7px;}
+  .dbody p{font-size:14px;color:var(--muted);}
+  .daily-quote{margin-top:34px;text-align:center;}
+  .daily-quote span{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 26px;font-size:15px;font-weight:700;color:var(--emerald-dk);box-shadow:0 4px 14px rgba(11,74,58,.07);}
+
+  /* ===== footer ===== */
+  footer{
+    background:
+      radial-gradient(680px 360px at 82% 0%, var(--mint) 0%, transparent 62%),
+      radial-gradient(520px 320px at 8% 100%, var(--gold-soft) 0%, transparent 60%),
+      var(--bg);
+    padding:100px 0 92px;text-align:center;border-top:1px solid var(--line);
+  }
+  footer .wrap{position:relative;}
+  footer h2{color:var(--deep);font-size:clamp(28px,4vw,40px);margin-bottom:14px;}
+  footer p{color:var(--muted);font-size:16px;margin-bottom:34px;}
+  footer .thanks{font-size:14px;color:var(--faint);}
+
+  @media (max-width:860px){
+    .hero-grid,.feat{grid-template-columns:1fr;}
+    .hero-grid{gap:44px;}
+    .quote{flex-direction:column;align-items:flex-start;gap:10px;padding:32px 30px;}
+    .feat{gap:30px;}
+    .feat:nth-child(even) .feat-media{order:0;}
+    .daily{grid-template-columns:1fr;}
+    .nav-links a:not(.cta){display:none;}
+    .hero{padding:64px 0 70px;}
+    .bento{grid-auto-rows:112px;}
+    .stats{gap:26px;}
+    footer{padding:72px 0 64px;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 18px;}
+    .sect{padding:62px 0;}
+    .hero{padding:48px 0 56px;}
+    h1{font-size:30px;}
+    h2{font-size:23.5px;}
+    .hero-sub{font-size:15px;margin-bottom:24px;}
+    .tags{margin-bottom:28px;}
+    .stat b{font-size:21px;}
+    .bento{grid-auto-rows:96px;gap:10px;}
+    .tile{border-radius:16px;}
+    .tile.solid b{font-size:19px;}
+    .feat + .feat{margin-top:64px;}
+    .feat h3{font-size:20.5px;}
+    .media-card .ph{min-height:200px;}
+    .cls{font-size:13px;padding:10px 12px;gap:9px;}
+    .quote{padding:26px 22px;}
+    .dcard .dbody{padding:24px 22px;}
+    footer{padding:56px 0 52px;}
+    .nav-name{font-size:14px;}
+  }
+
+  /* ===== polish v2 : 에디토리얼 마감 ===== */
+  h1,h2,.quote strong,footer h2{font-family:'Noto Serif KR',"Pretendard Variable",serif;font-weight:900;}
+  h1{font-size:clamp(36px,5vw,58px);line-height:1.32;letter-spacing:-0.01em;}
+  h2{line-height:1.42;letter-spacing:-0.005em;}
+  h1 .accent{
+    background-image:linear-gradient(transparent 72%, rgba(235,180,78,.55) 72%);
+    background-repeat:no-repeat;
+  }
+  .lead{font-size:17px;}
+  .eyebrow{letter-spacing:.02em;}
+  .eyebrow .no{opacity:.55;margin-right:7px;font-weight:800;}
+
+  /* 인용 배너 — 큰 따옴표 장식 */
+  .quote{position:relative;padding:46px 48px 42px;}
+  .quote::before{
+    content:"“";position:absolute;top:2px;left:26px;
+    font-family:'Noto Serif KR',serif;font-weight:900;font-size:96px;line-height:1;
+    color:rgba(255,255,255,.14);
+  }
+  .quote strong{position:relative;font-size:clamp(21px,2.6vw,27px);letter-spacing:0;}
+
+  /* 카드 마이크로 인터랙션 */
+  .media-card,.dcard,.cls,.sem{transition:transform .25s ease, box-shadow .25s ease;}
+  .media-card:hover,.dcard:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(11,74,58,.14);}
+  .cls:hover{transform:translateX(4px);box-shadow:0 6px 18px rgba(11,74,58,.09);}
+  .sem:hover{transform:translateY(-3px);}
+  .tile{transition:transform .3s ease;}
+  .tile:hover{transform:scale(1.02);}
+
+  /* 스크롤 등장 */
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease;}
+    .reveal.in{opacity:1;transform:none;}
+    .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  }
+
+  /* 푸터 마감 */
+  footer h2{line-height:1.45;}
+  footer .thanks{margin-top:10px;letter-spacing:.01em;}
+
+  @media (max-width:480px){
+    .quote{padding:34px 24px 30px;}
+    .quote::before{font-size:70px;left:14px;}
+  }
+
+  /* ===== 핵심 인사이트 ===== */
+  .insight{
+    margin-top:46px;background:#fff;border:1px solid var(--line);border-radius:var(--r);
+    padding:38px 42px 34px;box-shadow:var(--shadow);
+  }
+  .ins-label{display:inline-block;font-size:12.5px;font-weight:800;color:var(--gold-dk);background:var(--gold-soft);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+  .ins-line{
+    font-family:'Noto Serif KR',serif;font-weight:900;color:var(--deep);
+    font-size:clamp(21px,3vw,30px);line-height:1.5;margin-bottom:12px;letter-spacing:-0.005em;
+  }
+  .ins-line s{color:var(--faint);text-decoration-thickness:3px;text-decoration-color:var(--coral);}
+  .ins-line b{
+    color:var(--emerald-dk);
+    background-image:linear-gradient(transparent 70%, rgba(20,148,104,.22) 70%);
+  }
+  .ins-sub{font-size:15px;color:var(--muted);max-width:600px;}
+  .presenter{margin-top:36px;font-size:13.5px;color:var(--faint);}
+  @media (max-width:480px){ .insight{padding:26px 22px 24px;} }
+
+  .dcard.wide{grid-column:1/-1;flex-direction:row;}
+  .dcard.wide .ph{flex:0 0 42%;min-height:auto;}
+  .dcard.wide .dbody{align-self:center;padding:26px 30px;}
+  @media (max-width:860px){
+    .dcard.wide{flex-direction:column;}
+    .dcard.wide .ph{flex:none;min-height:170px;}
+  }
+
+  /* ===== 활동 4색 구분 ===== */
+  .t-g{--ac:var(--emerald);--ac-dk:var(--emerald-dk);}
+  .t-y{--ac:var(--gold);--ac-dk:var(--gold-dk);}
+  .t-f{--ac:var(--forest);--ac-dk:#2E7A50;}
+  .t-c{--ac:var(--coral);--ac-dk:#C1523C;}
+  .feat h3{display:flex;align-items:center;gap:11px;}
+  .feat h3::before{content:"";width:13px;height:13px;border-radius:4px;background:var(--ac);flex:none;}
+  .feat .mini{border-left-color:var(--ac);}
+  .feat .media-card{border-top:4px solid var(--ac);}
+  .feat .capt{display:flex;align-items:center;gap:8px;}
+  .feat .capt::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ac);flex:none;}
+  .feat .ph{background:linear-gradient(150deg,#EDF4F0,#E2EEE8);}
+  .t-g .ph{background:linear-gradient(150deg,#EAF6F0,#DCF0E6);}
+  .t-y .ph{background:linear-gradient(150deg,#FBF4E3,#F6EAC9);}
+  .t-f .ph{background:linear-gradient(150deg,#EBF5EE,#DDEEE3);}
+  .dcard{border-top:4px solid var(--coral);}
+  #daily .ph{background:linear-gradient(150deg,#FBEFE9,#F7E3DB);}
+  #daily .ph .cam{color:var(--coral);}
+  .accent2{background-image:linear-gradient(transparent 72%, rgba(235,180,78,.55) 72%);background-repeat:no-repeat;}
+
+  /* ===== no-photo layout ===== */
+  .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:0;}
+  .hero-sub{margin-left:auto;margin-right:auto;max-width:520px;}
+  .tags,.stats{justify-content:center;}
+  .feat{grid-template-columns:1fr;gap:0;}
+  .feat > div{max-width:1060px;}
+  .feat + .feat{margin-top:76px;}
+  .cls-list{grid-template-columns:1fr 1fr;}
+  .sems{grid-template-columns:1fr 1fr;}
+  .dcard{border-radius:18px;}
+  .dcard.wide .dbody{padding:26px 30px;}
+  .dbody{padding:24px 26px 26px;}
+  @media (max-width:860px){
+    .cls-list,.sems{grid-template-columns:1fr;}
+  }
+
+  /* ===== 발표용 확대 (큰 화면에서 크게, 여백 축소) ===== */
+  .wrap,.nav-in{max-width:1320px;}
+  h1{font-size:clamp(38px,5.4vw,66px);}
+  .hero-sub{font-size:19px;max-width:640px;}
+  .badge{font-size:15px;padding:9px 18px;}
+  .tag{font-size:15px;padding:9px 18px;}
+  .stat b{font-size:30px;}
+  .stat span{font-size:14.5px;}
+  .presenter{font-size:15px;}
+  h2{font-size:clamp(30px,3.8vw,44px);}
+  .eyebrow{font-size:14.5px;}
+  .lead{font-size:19px;max-width:760px;}
+  .ins-line{font-size:clamp(24px,3.2vw,36px);}
+  .ins-sub{font-size:17px;max-width:720px;}
+  .quote strong{font-size:clamp(23px,2.9vw,31px);}
+  .quote span{font-size:16.5px;max-width:520px;}
+  .feat h3{font-size:28px;}
+  .feat .desc{font-size:17.5px;}
+  .mini b{font-size:18.5px;}
+  .mini span{font-size:16px;}
+  .say{font-size:16px;padding:12px 18px;}
+  .cls{font-size:16px;padding:13px 18px 13px 10px;}
+  .cls i{min-width:48px;height:34px;font-size:14px;}
+  .cls em{font-size:12.5px;}
+  .sem b{font-size:21px;}
+  .sem p{font-size:15.5px;}
+  .sem .pill{font-size:13px;}
+  .dbody h4{font-size:20px;}
+  .dbody p{font-size:16px;}
+  .dbody .who{font-size:14px;}
+  .daily-quote span{font-size:17px;padding:14px 30px;}
+  footer h2{font-size:clamp(32px,4.6vw,50px);}
+  footer p{font-size:18px;}
+  footer .thanks{font-size:15.5px;}
+  @media (max-width:860px){
+    h1{font-size:clamp(32px,8vw,40px);}
+    .lead,.hero-sub{font-size:16.5px;}
+    .feat h3{font-size:23px;}
+    .cls{font-size:14px;}
+  }
+
+  /* ===== 발표용 확대 2단계 ===== */
+  .wrap,.nav-in{max-width:1420px;}
+  .eyebrow{font-size:18px;padding:9px 20px;border-radius:999px;}
+  .eyebrow .no{margin-right:9px;}
+  h1{font-size:clamp(42px,5.8vw,74px);}
+  .hero-sub{font-size:21px;max-width:700px;}
+  .badge{font-size:16px;}
+  .tag{font-size:16.5px;padding:10px 20px;}
+  .stat b{font-size:34px;}
+  .stat span{font-size:16px;}
+  .presenter{font-size:16px;}
+  h2{font-size:clamp(34px,4.2vw,50px);}
+  .lead{font-size:21px;max-width:840px;}
+  .ins-label{font-size:15px;padding:7px 17px;}
+  .ins-line{font-size:clamp(27px,3.6vw,41px);}
+  .ins-sub{font-size:19px;max-width:800px;}
+  .quote{padding:52px 56px 48px;}
+  .quote strong{font-size:clamp(26px,3.2vw,35px);}
+  .quote span{font-size:18px;max-width:600px;}
+  .feat h3{font-size:31px;}
+  .feat .desc{font-size:19px;}
+  .mini b{font-size:20.5px;}
+  .mini span{font-size:17.5px;}
+  .say{font-size:17.5px;}
+  .cls{font-size:17.5px;padding:14px 20px 14px 11px;}
+  .cls i{min-width:52px;height:37px;font-size:15px;}
+  .cls em{font-size:13.5px;}
+  .sem b{font-size:23px;}
+  .sem p{font-size:17px;}
+  .sem .pill{font-size:14px;}
+  .dbody h4{font-size:22px;}
+  .dbody p{font-size:17.5px;}
+  .dbody .who{font-size:15px;}
+  .daily-quote span{font-size:19px;}
+  footer h2{font-size:clamp(36px,5vw,56px);}
+  footer p{font-size:20px;}
+  footer .thanks{font-size:17px;}
+  @media (max-width:860px){
+    .eyebrow{font-size:14.5px;padding:7px 15px;}
+    h1{font-size:clamp(32px,8vw,42px);}
+    h2{font-size:clamp(25px,6vw,30px);}
+    .lead,.hero-sub{font-size:17px;}
+    .ins-line{font-size:clamp(22px,6vw,27px);}
+    .feat h3{font-size:24px;}
+    .cls{font-size:14.5px;}
+    .quote{padding:34px 26px;}
+  }
+
+  /* ===== 인성 프로그램 그래픽 ===== */
+  .mini{display:flex;gap:18px;align-items:flex-start;border-left:none;padding-left:0;margin:0 0 20px;}
+  .mico{
+    width:72px;height:72px;border-radius:20px;background:var(--mint);
+    display:grid;place-items:center;flex:none;
+    box-shadow:0 4px 14px rgba(11,74,58,.08);
+  }
+  .mico svg{width:42px;height:42px;}
+  .mini > div{padding-top:4px;}
+  @media (max-width:860px){
+    .mico{width:58px;height:58px;border-radius:16px;}
+    .mico svg{width:34px;height:34px;}
+    .mini{gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <span class="logo">최</span>
+    <span class="nav-name">우리 학교 최성보 이야기</span>
+    <div class="nav-links">
+      <a href="#why">우리의 방향</a>
+      <a href="#acts">네 가지 활동</a>
+      <a href="#daily">일상 챙김</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge fade"><i></i>최소성취수준 보장지도 선도학교 · 사례 나눔</span>
+      <h1 class="fade">미도달의 답은,<br><span class="accent">교실 밖에 있었습니다</span></h1>
+      <p class="hero-sub fade">성적보다 출결이 먼저였습니다. 학생들이 학교에 오고 싶어지도록, 우리 학교가 곳곳에 놓아둔 챙김의 기록입니다.</p>
+      <div class="tags fade">
+        <span class="tag g">인성 프로그램</span>
+        <span class="tag y">학급 사제동행</span>
+        <span class="tag f">교과융합 수업</span>
+        <span class="tag c">일상 속 챙김</span>
+      </div>
+      <div class="stats fade">
+        <div class="stat"><b>전 학급</b><span>1~2학년 사제동행 참여</span></div>
+        <div class="stat"><b>4가지</b><span>마음부터 일상까지 잇는 활동</span></div>
+        <div class="stat"><b>하나의 목표</b><span>미도달 학생 제로</span></div>
+      </div>
+      <p class="presenter fade">신일비즈니스고등학교 · 발표자 최재연</p>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 우리의 방향 ===== -->
+<section id="why" class="sect">
+  <div class="wrap">
+    <span class="eyebrow"><span class="no">01</span>우리의 방향</span>
+    <h2>목표는 처음부터 하나였어요</h2>
+    <p class="lead">1학년 공통과목에서 미도달 학생이 나오지 않도록 — 그 시작은 학생들을 자세히 들여다보는 일이었습니다.</p>
+
+    <div class="insight reveal">
+      <span class="ins-label">저희가 주목한 사실</span>
+      <p class="ins-line">미도달의 주요 요인은 <s>성적</s>이 아니라, <b>출결</b>이었습니다</p>
+      <p class="ins-sub">수업을 못 따라가서가 아니라, 학교에 오지 못해서 미도달이 생깁니다. 그래서 저희의 지원은 교실 안이 아니라 등굣길에서부터 시작됩니다.</p>
+    </div>
+
+    <div class="quote reveal">
+      <strong>“한 명의 미도달 학생도 만들지 말자”</strong>
+      <span>학습, 정서, 관계, 아침 등굣길까지 — 네 가지 활동이 전부 이 한 문장에서 나왔습니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 네 가지 활동 ===== -->
+<section id="acts" class="sect soft">
+  <div class="wrap">
+    <span class="eyebrow"><span class="no">02</span>함께한 활동</span>
+    <h2>마음부터 일상까지, 네 가지 활동</h2>
+    <p class="lead">마음을 여는 데서 시작해 학급, 수업, 그리고 매일의 일상까지 이어집니다.</p>
+
+    <div style="margin-top:64px">
+
+      <!-- 인성 프로그램 -->
+      <article class="feat reveal t-g">
+        <div>
+          <span class="eyebrow">인성 프로그램</span>
+          <h3>마음이 열려야 공부도 들어와요</h3>
+          <p class="desc">공부 얘기보다 먼저, 향기와 놀이로 마음을 두드렸습니다.</p>
+          <div class="mini"><span class="mico"><svg viewBox="0 0 48 48" fill="none" stroke="#148A66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M13 7.5c1.6 2.2 2.6 3.4 2.6 4.8a2.9 2.9 0 1 1-5.8 0c0-1.4 1-2.6 3.2-4.8z" fill="#EBB44E" stroke="none"/>
+<rect x="18.5" y="13" width="11" height="5" rx="1.6"/>
+<path d="M21.5 18v4.5M26.5 18v4.5"/>
+<path d="M17 26.5c0-2.3 1.9-4 4.5-4h5c2.6 0 4.5 1.7 4.5 4v10a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-10z"/>
+<path d="M17 31.5h14" />
+<path d="M20.5 35.5c1.2 1 2.4 1 3.5 0s2.3-1 3.5 0" stroke="#EBB44E"/>
+<path d="M37 12.5l1.2 2.4M40.5 19h2.6M37.5 25l2-1.6" stroke="#E8836F"/>
+</svg></span><div><b>아로마 감정오일 수업</b><span>향으로 내 감정을 알아차리고 표현하는 수업 — 평소 말이 없던 아이들이 먼저 입을 열었어요.</span></div></div>
+          <div class="mini"><span class="mico"><svg viewBox="0 0 48 48" fill="none" stroke="#148A66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M13 42V7"/>
+<path d="M13 8h17.5l-4.5 5.5 4.5 5.5H13z" fill="#E8836F" fill-opacity=".28"/>
+<circle cx="35" cy="33" r="7.5"/>
+<circle cx="35" cy="33" r="2.4" fill="#EBB44E" stroke="none"/>
+<path d="M19 42h-12" />
+<path d="M24 40.5c1.5-2.6 4-3.8 6.5-3.2" stroke="#EBB44E"/>
+</svg></span><div><b>학교 서바이벌 게임</b><span>학교 전체를 무대로 한 협동 미션 — 수업 시간엔 조용하던 아이들이 제일 앞장섰습니다.</span></div></div>
+          <div class="mini"><span class="mico"><svg viewBox="0 0 48 48" fill="none" stroke="#148A66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M15 15h18c6.5 0 10 5.6 10 11.4 0 4.6-2.6 8.6-6.7 8.6-3.2 0-4.9-2.2-6.3-4.4H18c-1.4 2.2-3.1 4.4-6.3 4.4C7.6 35 5 31 5 26.4 5 20.6 8.5 15 15 15z"/>
+<path d="M14.5 21.5v7M11 25h7"/>
+<circle cx="32.5" cy="22.5" r="2" fill="#EBB44E" stroke="none"/>
+<circle cx="37.5" cy="27.5" r="2" fill="#E8836F" stroke="none"/>
+<path d="M20 9.5c1.3-1.8 3-1.8 4.3 0M24.5 7c1.8-2.4 4.2-2.4 6 0" stroke="#EBB44E"/>
+</svg></span><div><b>교내 e스포츠 대회</b><span>학생들이 가장 좋아하는 무대를 학교 안으로 — 게임을 매개로 소속감이 생기고, 학교가 오고 싶은 곳이 됐어요.</span></div></div>
+          <span class="say">“선생님, 이 향이 딱 제 기분이에요”</span>
+        </div>
+      </article>
+
+      <!-- 학급 사제동행 -->
+      <article class="feat reveal t-y">
+        <div>
+          <span class="eyebrow y">학급 사제동행</span>
+          <h3>우리 반이 정한, 우리 반 프로젝트</h3>
+          <p class="desc">1~2학년 모든 학급이 참여했습니다. 담임 선생님과 아이들이 유형을 고르고 이름도 직접 지었어요 — 이름만 봐도 반 분위기가 보입니다.</p>
+          <div class="type-chips">
+            <span class="tag y">학습응원형</span>
+            <span class="tag f">문화체험형</span>
+            <span class="tag c">정서지원형</span>
+          </div>
+          <div class="cls-list">
+            <span class="cls"><i>1-1</i><em class="a">학습응원</em>작은 성공의 기록, 우리 반 레벨업 프로젝트</span>
+            <span class="cls"><i>1-3</i><em class="b">문화체험</em>"열 일곱, 무엇이든 할 수 있는 '나'이다."</span>
+            <span class="cls"><i>1-5</i><em class="c">정서지원</em>365일 36.5도의 따뜻한 마음 지피기</span>
+            <span class="cls"><i>1-6</i><em class="c">정서지원</em>함께 만들고 나누는 마음 성장 교실</span>
+            <span class="cls"><i>1-8</i><em class="c">정서지원</em>선생님과 함께 따뜻하고 안전한, 모두가 성장하는 학급 만들기</span>
+            <span class="cls"><i>2-1</i><em class="a">학습응원</em>나를 알고, 너를 배우며 함께 성장하는 학급 멘토링 서클</span>
+            <span class="cls"><i>2-3</i><em class="a">학습응원</em>함께 걷는 학습 응원 프로젝트</span>
+            <span class="cls"><i>2-4</i><em class="a">학습응원</em>I(I등급)에서 A(Ace)로! 응원 프로젝트</span>
+            <span class="cls"><i>2-5</i><em class="c">정서지원</em>[Dear. Tomorrow] 내일의 우리에게 보내는 오늘의 기록</span>
+            <span class="cls"><i>2-6</i><em class="c">정서지원</em>감정 날씨 맑음 — 너의 마음을 함께 읽는 시간</span>
+            <span class="cls"><i>2-7</i><em class="c">정서</em><em class="a">학습</em>학생 정서 안정과 자존감 회복 및 학습 동기 강화 프로그램</span>
+            <span class="cls"><i>2-8</i><em class="c">정서</em><em class="a">학습</em>너의 가능성을 믿어! 마음·학습 동반성장 프로젝트</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 교과융합 -->
+      <article class="feat reveal t-f">
+        <div>
+          <span class="eyebrow" style="background:var(--forest-soft);color:#2E7A50">교과융합 인성수업</span>
+          <h3>한 주제를 여러 교과가 함께</h3>
+          <p class="desc">따로 프로그램을 만들지 않고, 여러 교과가 같은 주제를 각자의 시선으로 풀어냅니다. 인성교육이 일상 수업 속에 자연스럽게 녹아들어요.</p>
+          <div class="sems">
+            <div class="sem g"><span class="pill">1학기 · 운영 완료</span><b>지속가능한 여행</b><p>여행이라는 친숙한 소재로 환경, 경제, 문화를 넘나드는 수업</p></div>
+            <div class="sem y"><span class="pill">2학기 · 준비 중</span><b>유니버설 디자인</b><p>‘모두를 위한 디자인’으로 배려와 공존을 이야기할 예정 — 교과별 협의가 한창</p></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 일상 챙김 ===== -->
+<section id="daily" class="sect soft">
+  <div class="wrap">
+    <span class="eyebrow c"><span class="no">03</span>일상 속 챙김</span>
+    <h2>사실 제일 효과 좋았던 건, 작은 챙김이었어요</h2>
+    <p class="lead">미도달은 성적보다 출결에서 먼저 시작되더라고요. 그래서 거창한 프로그램보다, 등굣길과 쉬는 시간부터 챙겼습니다.</p>
+
+    <div class="daily">
+      <div class="dcard reveal">
+        <div class="dbody">
+          <p class="who" style="color:var(--emerald-dk)">1학년 공통과목 선생님들과</p>
+          <h4>간식 있는 보충지도</h4>
+          <p>간식 하나 놓였을 뿐인데, 남아서 하는 공부가 아니라 기다려지는 시간이 됐어요.</p>
+        </div>
+      </div>
+      <div class="dcard reveal d1">
+        <div class="dbody">
+          <p class="who" style="color:var(--gold-dk)">학생생활인권부 주관</p>
+          <h4>아침 김밥 나누기</h4>
+          <p>등교가 힘든 아이들에게 학교 오는 이유를 하나 더 만들어 주고 싶었어요.</p>
+        </div>
+      </div>
+      <div class="dcard reveal d2">
+        <div class="dbody">
+          <p class="who" style="color:#C1523C">선생님과 학생이 같이</p>
+          <h4>사제동행 배드민턴</h4>
+          <p>라켓을 같이 잡으며 쌓인 신뢰가, 신기하게도 교실의 배움으로 이어지더라고요.</p>
+        </div>
+      </div>
+      <div class="dcard reveal d3">
+        <div class="dbody">
+          <p class="who" style="color:#2E7A50">학생생활인권부</p>
+          <h4>곳곳의 간식 지원</h4>
+          <p>보충지도, 행사, 운동까지 — 학생을 만나는 길목마다 간식을 놓아, 학교 오는 발걸음을 가볍게 했어요.</p>
+        </div>
+      </div>
+      <div class="dcard wide reveal">
+        <div class="dbody">
+          <p class="who" style="color:var(--gold-dk)">체육대회 날, 전교생에게</p>
+          <h4>운동장 위의 아이스크림</h4>
+          <p>체육대회 날, 전교생에게 아이스크림을 하나씩 돌렸어요. 학교가 즐거운 기억으로 남는 것 — 그게 결국 출결을 지키는 힘이 되니까요.</p>
+        </div>
+      </div>
+    </div>
+    <div class="daily-quote reveal"><span>“김밥 먹으러 왔다가, 수업까지 듣고 갑니다”</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>내일도, 학교에<br><span class="accent2">오고 싶어지도록</span></h2>
+    <p>교실 밖의 작은 챙김들이 교실 안의 배움으로 이어질 때까지 — 앞으로도 계속해 보겠습니다.</p>
+    <div class="tags" style="justify-content:center">
+      <span class="tag g">인성 프로그램</span>
+      <span class="tag y">학급 사제동행</span>
+      <span class="tag f">교과융합 수업</span>
+      <span class="tag c">일상 속 챙김</span>
+    </div>
+    <p class="thanks">들어주셔서 감사합니다 · 신일비즈니스고등학교 최재연</p>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  } else { els.forEach(el => el.classList.add('in')); }
+</script>
+</body>
+</html>
